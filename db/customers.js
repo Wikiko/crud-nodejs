@@ -13,6 +13,19 @@ const findAll = () => new Promise((resolve, reject) => {
         });
 });
 
+const insert = customer => new Promise((resolve, reject) => {
+    connect()
+        .then(db => db
+            .collection('customers')
+            .insert(customer))
+        .then(resolve)
+        .catch(err => {
+            console.log(err);
+            reject(err);
+        });
+});
+
 module.exports = {
-    findAll
+    findAll,
+    insert
 }

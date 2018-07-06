@@ -13,4 +13,16 @@ router.get('/', (req, res, next) => {
       }));
 });
 
+router.get('/new', (req, res, next) => {
+  res.render('new', { title: 'Novo Cadastro' });
+});
+
+router.post('/new', (req, res, next) => {
+  const nome = req.body.nome;
+  const idade = parseInt(req.body.idade);
+  Customers
+    .insert({ nome, idade })
+    .then(() => res.redirect('/'));
+});
+
 module.exports = router;
