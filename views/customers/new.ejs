@@ -14,12 +14,12 @@
     <h1>
         <%= title %>
     </h1>
-    <form action="/new" method="POST">
+    <form action="<%= action %>" method="POST">
         <p>Nome:
-            <input type="text" name="nome">
+            <input type="text" name="nome" value="<%= customer.nome %>">
         </p>
         <p>Idade:
-            <input type="text" name="idade">
+            <input type="text" name="idade" value="<%= customer.idade %>">
         </p>
         <input type="submit" value="Salvar">
     </form>

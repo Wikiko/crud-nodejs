@@ -1,4 +1,4 @@
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 
 let connection = null;
 let db = null;
@@ -31,5 +31,6 @@ const disconnect = () => {
 
 module.exports = {
     connect,
-    disconnect
+    disconnect,
+    ObjectId
 }
